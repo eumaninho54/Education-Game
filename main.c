@@ -2,23 +2,15 @@
 
 void centerPrintf(char*string){
 
-    int character = 0;
-    int size = (100 - strlen(string)) / 2;
+    int space = (100 - strlen(string)) / 2;
 
-    char print[100];
+    char print[99];
 
-    for (int i = 0; i < 100; i++)
-    {
-        if (i > size && i <= size + strlen(string))
-        {
-            print[i] = string[character++];
-        }else{
-            print[i] = ' ';
-        }
+    for (int i = 0; i < 100; i++){
+        print[i] = i >= space && i < space + strlen(string) ? string[i - space] : '-';
     }
 
-    printf("%s", print);
-
+    printf("%s\n", print);
 
 }
 
@@ -29,13 +21,10 @@ int main(){
     
     system("mode con:cols=100 lines=45");
 
-    
+    centerPrintf("Bem vindo ao meu jogo");
 
-    
-
-    centerPrintf("BEM VINDO AO MEU JOGO");
-        
-
+    centerPrintf("Ola amigo");
 
     system("pause");
+        
 }
