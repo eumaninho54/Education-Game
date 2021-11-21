@@ -1,9 +1,11 @@
 //Color definition - Regular
-#define ANSI_COLOR_RED      "\x1b[31m"
-#define ANSI_COLOR_GRAY     "\e[0;37m"
+#define ANSI_COLOR_RED          "\x1b[31m"
+#define ANSI_COLOR_GRAY         "\e[0;37m"
 
 //Color definition - Intensity
-#define ANSI_COLOR_GREEN_INTEN "\e[0;92m"
+#define ANSI_COLOR_GREEN_INTEN  "\e[0;92m"
 
 //Color definition - Background
-#define ANSI_COLOR_BLUE_BG "\e[0;100m"
+#define ANSI_COLOR_BLUE_BG      "\e[0;104m"
+#define ANSI_COLOR_GREEN_BG     "\e[0;102m"
+#define ANSI_COLOR_WHITE_BG     "\e[0;107m"

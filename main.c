@@ -4,12 +4,15 @@
 
 
 int main(){
-    system("mode con:cols=100 lines=45");
+    system("mode con:cols=60 lines=30");
     
     titleInit();
 
-    menuGame();
+    resizeScreen();
+    menuGame(0);
 
-    system("pause");
+    menuSelector();
+
+    getch();
         
 }
