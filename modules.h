@@ -2,3 +2,4 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
+#include <stdbool.h>

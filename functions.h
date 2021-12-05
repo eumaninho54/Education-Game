@@ -1,16 +1,12 @@
+//Roles have been organized into internal roles and external roles.
+
 #include "modules.h"
 #include "colors.h"
 
 //Global var
 int order = 0;
 
-//Resize the terminal screen
-void resizeScreen(){
-    if(!system("mode con:cols=60 lines=30")){
-        system("mode con:cols=60 lines=30");
-    }
-}
-
+// Internal Functions //
 
 //Take position at the terminal
 void gotoxy(int x, int y){
@@ -46,13 +42,13 @@ void leftPrintf(char*string){
 }
 
 //Center texts
-void centerPrintf(char*string, boolean bool){
+void centerPrintf(char*string, bool boolean){
 
     int space = (60 - strlen(string)) / 2;
 
     char print[59];
 
-    if(bool == TRUE){
+    if(boolean == TRUE){
         for (int i = 0; i < 60; i++){
             print[i] = i >= space && i < space + strlen(string) ? string[i - space] : '=';
     } 
@@ -72,6 +68,303 @@ void centerPrintf(char*string, boolean bool){
     }
     printf("\n");
 }
+
+//Key options
+void menuKeys(int key){
+    printf("\n\n\n\n");
+
+    switch (key){
+    case 80: case 115:
+        if(order == 0){
+            leftPrintf(" NEW GAME");
+            leftPrintf(">> RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(" EXIT"); 
+
+            order = 1;
+            break;
+        }
+
+        if(order == 1){
+            leftPrintf(" NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(">> CREDITS");
+            leftPrintf(" EXIT"); 
+
+            order = 2;
+            break;
+        }
+
+        if(order == 2){
+            leftPrintf(" NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(">> EXIT"); 
+
+            order = 3;
+            break;
+        }
+
+        if(order == 3){
+            leftPrintf(" NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(">> EXIT"); 
+            break;
+        }
+        break;
+    
+    case 72: case 119:
+        if(order == 0){
+            leftPrintf(">> NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(" EXIT"); 
+            break;
+        }
+
+        if(order == 1){
+            leftPrintf(">> NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(" EXIT"); 
+
+            order = 0;
+            break;
+        }
+
+        if(order == 2){
+            leftPrintf(" NEW GAME");
+            leftPrintf(">> RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(" EXIT"); 
+
+            order = 1;
+            break;
+        }
+
+        if(order == 3){
+            leftPrintf(" NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(">> CREDITS");
+            leftPrintf(" EXIT"); 
+
+            order = 2;
+            break;
+        }
+        break;
+        
+    case 0:
+        leftPrintf(">> NEW GAME");
+        leftPrintf(" RECORD");
+        leftPrintf(" CREDITS");
+        leftPrintf(" EXIT"); 
+        break;
+
+    default:
+        if(order == 0){
+            leftPrintf(">> NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(" EXIT"); 
+            break;
+        }
+
+        if(order == 1){
+            leftPrintf(" NEW GAME");
+            leftPrintf(">> RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(" EXIT"); 
+            break;
+        }
+
+        if(order == 2){
+            leftPrintf(" NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(">> CREDITS");
+            leftPrintf(" EXIT"); 
+            break;
+        }
+
+        if(order == 3){
+            leftPrintf(" NEW GAME");
+            leftPrintf(" RECORD");
+            leftPrintf(" CREDITS");
+            leftPrintf(">> EXIT"); 
+            break;
+        }
+    }
+}
+
+void levelOne(){
+
+    gotoxy(21, 1);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(13);
+
+    gotoxy(21, 2);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(13);
+
+    gotoxy(21, 3);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(13);
+
+    gotoxy(28, 4);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(6);
+
+    gotoxy(28, 5);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(6);
+
+    gotoxy(28, 6);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(6);
+
+    gotoxy(28, 7);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(6);
+
+    gotoxy(21, 8);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(20);
+
+    gotoxy(21, 9);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(20);
+
+    gotoxy(21, 10);
+    printf(ANSI_COLOR_BLUE_BG);
+    menuLetsPlay(20);
+
+    printf("\n\n\n");
+
+    printf(ANSI_COLOR_GRAY);
+}
+
+void worldOne(){
+    int alternative;
+    int error = 0;
+    bool paramater = true;
+    int resultsList[3] = {2, 3, 3};
+
+    resizeScreen();
+    levelOne();
+
+    centerPrintf("In this world you will have simple logic questions", FALSE);
+    printf(ANSI_COLOR_GREEN_INTEN);
+    centerPrintf("Good luck", FALSE);
+    printf(ANSI_COLOR_GRAY);
+
+    Sleep(1000);
+    system("cls");
+
+    levelOne();
+
+    centerPrintf("A)Look at the number sequence below and check the", FALSE);
+    centerPrintf("that has a number that correctly replaces the X.", FALSE);
+    centerPrintf("9   27   29   87   89   267   269   X", FALSE);
+
+    centerPrintf("[1]- 900", FALSE);
+    centerPrintf("[2]- 807", FALSE);
+    centerPrintf("[3]- 717", FALSE);
+    centerPrintf("[4]- 655", FALSE);
+    centerPrintf("[5]- 529", FALSE);
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 49: case 51: case 52:
+            printf("Sorry, incorrect alternative, the asnwer is [2]- 807");
+            paramater = false;
+            break;
+        
+        case 50:
+            printf("Great, alternative correct");
+            paramater = false;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                printf("Question skipped because of excessive errors");
+            }
+            break;
+        }
+    }
+    getch();
+    system("cls");
+
+    levelOne();
+
+}
+
+void newGame(){
+    resizeScreen();
+
+    printf("\n\n\n\n\n\n\n\n\n\n");
+    centerPrintf("Welcome, the game is divided into 3 worlds", FALSE);
+    centerPrintf("as you progress through the worlds the level", FALSE);
+    printf(ANSI_COLOR_GREEN_INTEN);
+    centerPrintf("Lets go", FALSE);
+
+    Sleep(1000);
+    system("cls");
+
+    worldOne();
+}
+
+void records(){
+
+}
+
+void credits(){
+
+}
+
+// External Functions //
+
+//Build panel
+void getPanel(){
+    switch (order)
+    {
+    case 0:
+        newGame();
+        break;
+    
+    case 1:
+        records();
+        break;
+
+    case 2:
+        credits();
+        break;
+
+    case 3:
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n"ANSI_COLOR_RED);
+        centerPrintf("Good bye, thanks!", FALSE);
+        system("start https://github.com/ymaninho54");
+        Sleep(2000);
+        exit(0);
+        break;
+    }
+
+}
+
+//Resize the terminal screen
+void resizeScreen(){
+    if(!system("mode con:cols=60 lines=30")){
+        system("mode con:cols=60 lines=30");
+    }
+}
+
 // Home screen function
 void titleInit(){
     
@@ -89,7 +382,7 @@ void titleInit(){
     centerPrintf("Have fun!", FALSE);
     printf(ANSI_COLOR_GRAY);
 
-    Sleep(1500);
+    getch();
     system("cls");
 
 }
@@ -100,8 +393,6 @@ void menuSelector(){
     do{
         kbhit();
         int key = getch();
-
-        printf("%d", key);
 
         resizeScreen();
         menuGame(key);
@@ -114,135 +405,7 @@ void menuSelector(){
     }while(limit != 80 || limit != 72 || limit != 119 || limit != 115);
 }
 
-
-//Key options
-void menuKeys(int key){
-    printf("\n\n\n\n");
-
-    switch (key){
-    case 80: case 115:
-        if(order == 0){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(">> RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(" SAIR"); 
-
-            order = 1;
-            break;
-        }
-
-        if(order == 1){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(">> CREDITOS");
-            leftPrintf(" SAIR"); 
-
-            order = 2;
-            break;
-        }
-
-        if(order == 2){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(">> SAIR"); 
-
-            order = 3;
-            break;
-        }
-
-        if(order == 3){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(">> SAIR"); 
-            break;
-        }
-        break;
-    
-    case 72: case 119:
-        if(order == 0){
-            leftPrintf(">> NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(" SAIR"); 
-            break;
-        }
-
-        if(order == 1){
-            leftPrintf(">> NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(" SAIR"); 
-
-            order = 0;
-            break;
-        }
-
-        if(order == 2){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(">> RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(" SAIR"); 
-
-            order = 1;
-            break;
-        }
-
-        if(order == 3){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(">> CREDITOS");
-            leftPrintf(" SAIR"); 
-
-            order = 2;
-            break;
-        }
-        break;
-        
-    case 0:
-        leftPrintf(">> NOVO JOGO");
-        leftPrintf(" RECORDE");
-        leftPrintf(" CREDITOS");
-        leftPrintf(" SAIR"); 
-        break;
-
-    default:
-        if(order == 0){
-            leftPrintf(">> NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(" SAIR"); 
-            break;
-        }
-
-        if(order == 1){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(">> RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(" SAIR"); 
-            break;
-        }
-
-        if(order == 2){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(">> CREDITOS");
-            leftPrintf(" SAIR"); 
-            break;
-        }
-
-        if(order == 3){
-            leftPrintf(" NOVO JOGO");
-            leftPrintf(" RECORDE");
-            leftPrintf(" CREDITOS");
-            leftPrintf(">> SAIR"); 
-            break;
-        }
-    }
-}
-
-//Game start menu
+//Drawing on the terminal
 void menuGame(int key){
 
     
@@ -419,7 +582,13 @@ void menuGame(int key){
     menuLetsPlay(9);
 
     printf(ANSI_COLOR_WHITE_BG);
-    menuLetsPlay(4);
+    menuLetsPlay(1);
+
+    printf(ANSI_COLOR_GREEN_BG);
+    menuLetsPlay(2);
+
+    printf(ANSI_COLOR_WHITE_BG);
+    menuLetsPlay(1);
 
     printf(ANSI_COLOR_GREEN_BG);
     menuLetsPlay(1);
@@ -485,10 +654,10 @@ void menuGame(int key){
     menuLetsPlay(6);
 
     printf(ANSI_COLOR_WHITE_BG);
-    menuLetsPlay(1);
+    menuLetsPlay(4);
     
     printf(ANSI_COLOR_GREEN_BG);
-    menuLetsPlay(4);
+    menuLetsPlay(1);
 
     printf(ANSI_COLOR_WHITE_BG);
     menuLetsPlay(1);
