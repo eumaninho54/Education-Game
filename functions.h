@@ -247,43 +247,109 @@ void levelOne(){
 void levelTwo(){
     gotoxy(23, 1);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(18);
+    menuLetsPlay(16);
 
     gotoxy(21, 2);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(20);
+    menuLetsPlay(5);
+
+    gotoxy(35, 2);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(6);
+
+    gotoxy(21, 3);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
 
     gotoxy(37, 3);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(3);
+    menuLetsPlay(4);
 
     gotoxy(34, 4);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(3);
+    menuLetsPlay(4);
 
     gotoxy(31, 5);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(3);
+    menuLetsPlay(4);
 
     gotoxy(28, 6);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(3);
+    menuLetsPlay(4);
 
     gotoxy(25, 7);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(3);
+    menuLetsPlay(4);
 
     gotoxy(22, 8);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(3);
+    menuLetsPlay(4);
 
     gotoxy(20, 9);
     printf(ANSI_COLOR_YELLOW_BG);
-    menuLetsPlay(21);
+    menuLetsPlay(5);
+
+    gotoxy(37, 9);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
 
     gotoxy(20, 10);
     printf(ANSI_COLOR_YELLOW_BG);
     menuLetsPlay(19);
+
+    printf("\n\n\n");
+
+    printf(ANSI_COLOR_GRAY);
+}
+
+    void levelThree(){
+    gotoxy(27, 1);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(12);
+
+    gotoxy(24, 2);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(17);
+
+    gotoxy(24, 3);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(4);
+
+    gotoxy(37, 3);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(4);
+
+    gotoxy(37, 4);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(4);
+
+    gotoxy(33, 5);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(6);
+
+    gotoxy(33, 6);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(6);
+
+    gotoxy(37, 7);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(4);
+
+    gotoxy(24, 8);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(4);
+
+    gotoxy(37, 8);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(4);
+
+    gotoxy(24, 9);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(17);
+
+    gotoxy(27, 10);
+    printf(ANSI_COLOR_MAGENTA_BG);
+    menuLetsPlay(12);
 
     printf("\n\n\n");
 
@@ -451,7 +517,7 @@ void worldOne(){
     system("cls");
     printf("\n\n\n\n\n\n\n\n\n\n");
 
-    centerPrintf("Congratulations, you have completed all questions.", FALSE);
+    centerPrintf("Congratulations, you have completed all questions!", FALSE);
     centerPrintf("Now you advance the world and the questions", FALSE);
     centerPrintf("will be more difficult", FALSE);
     printf(ANSI_COLOR_BLUE);
@@ -628,7 +694,35 @@ void worldTwo(){
     }
     getch();
     system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n");
 
+    centerPrintf("Congratulations, you have completed all questions!", FALSE);
+    centerPrintf("Now you advance the world and the questions", FALSE);
+    centerPrintf("will be more difficult", FALSE);
+    printf(ANSI_COLOR_YELLOW);
+    centerPrintf("welcome to world 3", FALSE);
+    printf(ANSI_COLOR_GRAY);
+
+    getch();
+    system("cls");
+
+}
+
+void worldThree(){
+    int alternative;
+    int error = 0;
+    bool paramater = true;
+
+    resizeScreen();
+    levelThree();
+
+    centerPrintf("In this world you will test your knowledge of C lenguage", FALSE);
+    //printf(ANSI_COLOR_BLUE_INTEN);
+    centerPrintf("Good luck", FALSE);
+    printf(ANSI_COLOR_GRAY);
+
+    getch();
+    system("cls");
 }
 
 void newGame(){
@@ -647,6 +741,9 @@ void newGame(){
     resizeScreen();
 
     worldTwo();
+    resizeScreen();
+
+    worldThree();
 }
 
 void records(){
