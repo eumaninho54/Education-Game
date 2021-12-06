@@ -5,6 +5,7 @@
 
 //Global var
 int order = 0;
+int accerts[9];
 
 // Internal Functions //
 
@@ -243,21 +244,66 @@ void levelOne(){
     printf(ANSI_COLOR_GRAY);
 }
 
+void levelTwo(){
+    gotoxy(23, 1);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(18);
+
+    gotoxy(21, 2);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(20);
+
+    gotoxy(37, 3);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
+
+    gotoxy(34, 4);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
+
+    gotoxy(31, 5);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
+
+    gotoxy(28, 6);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
+
+    gotoxy(25, 7);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
+
+    gotoxy(22, 8);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(3);
+
+    gotoxy(20, 9);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(21);
+
+    gotoxy(20, 10);
+    printf(ANSI_COLOR_YELLOW_BG);
+    menuLetsPlay(19);
+
+    printf("\n\n\n");
+
+    printf(ANSI_COLOR_GRAY);
+}
+
 void worldOne(){
     int alternative;
     int error = 0;
     bool paramater = true;
-    int resultsList[3] = {2, 3, 3};
 
     resizeScreen();
     levelOne();
 
     centerPrintf("In this world you will have simple logic questions", FALSE);
-    printf(ANSI_COLOR_GREEN_INTEN);
+    printf(ANSI_COLOR_BLUE_INTEN);
     centerPrintf("Good luck", FALSE);
     printf(ANSI_COLOR_GRAY);
 
-    Sleep(1000);
+    getch();
     system("cls");
 
     levelOne();
@@ -270,7 +316,6 @@ void worldOne(){
     centerPrintf("[2]- 807", FALSE);
     centerPrintf("[3]- 717", FALSE);
     centerPrintf("[4]- 655", FALSE);
-    centerPrintf("[5]- 529", FALSE);
 
     while(paramater){
         gotoxy(0,22);
@@ -280,13 +325,15 @@ void worldOne(){
         switch (alternative)
         {
         case 49: case 51: case 52:
-            printf("Sorry, incorrect alternative, the asnwer is [2]- 807");
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- 807"ANSI_COLOR_GRAY);
             paramater = false;
+            accerts[0] = 0;
             break;
         
         case 50:
-            printf("Great, alternative correct");
+            printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
+            accerts[0] = 1;
             break;
 
         default:
@@ -294,7 +341,9 @@ void worldOne(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                printf("Question skipped because of excessive errors");
+                accerts[0] = 0;
+                
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
         }
@@ -302,7 +351,283 @@ void worldOne(){
     getch();
     system("cls");
 
+    resizeScreen();
     levelOne();
+
+    centerPrintf("B)Pedro stated: 'On that same day last year my son's", FALSE);
+    centerPrintf("age was one third of my age and, in 12 years' time, i will", FALSE);
+    centerPrintf("be twice his age. The day Peter made this statement, he had:", FALSE);
+
+    centerPrintf("[1]- 38 anos", FALSE);
+    centerPrintf("[2]- 39 anos", FALSE);
+    centerPrintf("[3]- 40 anos", FALSE);
+    centerPrintf("[4]- 41 anos", FALSE);
+
+    paramater = true;
+    error = 0;
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 49: case 50: case 52:
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [3]- 40 anos"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[1] = 0;
+            break;
+        
+        case 51:
+            printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[1] = 1;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                accerts[1] = 0;
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
+            }
+            break;
+        }
+    }
+    getch();
+    system("cls");
+
+    resizeScreen();
+    levelOne();
+
+    centerPrintf("C)Some consider that the city of Florianopolis was", FALSE);
+    centerPrintf("founded on March 23, which fell on a Saturday.", FALSE);
+    centerPrintf("After 90 days on June 21 a piece of data signaled", FALSE);
+    centerPrintf("the beginning of winter when the night is the", FALSE);
+    centerPrintf("longest of the year. That day fell into one:", FALSE);
+    
+
+    centerPrintf("[1]- Tuesday", FALSE);
+    centerPrintf("  [2]- Wednesday", FALSE);
+    centerPrintf("  [3]- Thursday", FALSE);
+    centerPrintf("[4]- Friday", FALSE);
+
+    paramater = true;
+    error = 0;
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 49: case 50: case 51:
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- Friday"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[2] = 0;
+            break;
+        
+        case 52:
+            printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[2] = 1;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                accerts[2] = 0;
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
+            }
+            break;
+        }
+    }
+    getch();
+    system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n");
+
+    centerPrintf("Congratulations, you have completed all questions.", FALSE);
+    centerPrintf("Now you advance the world and the questions", FALSE);
+    centerPrintf("will be more difficult", FALSE);
+    printf(ANSI_COLOR_BLUE);
+    centerPrintf("welcome to world 2", FALSE);
+    printf(ANSI_COLOR_GRAY);
+
+    getch();
+    system("cls");
+    
+}
+
+void worldTwo(){
+    int alternative;
+    int error = 0;
+    bool paramater = true;
+
+    levelTwo();
+
+    centerPrintf("in this world you will have questions about", FALSE);
+    centerPrintf("programming logic", FALSE);
+    printf(ANSI_COLOR_YELLOW_INTEN);
+    centerPrintf("Good luck", FALSE);
+    printf(ANSI_COLOR_GRAY);
+
+    getch();
+    system("cls");
+
+    levelTwo();
+
+    centerPrintf("A)Which of the following statements about", FALSE);
+    centerPrintf("arrays (vectors) is true?", FALSE);
+    printf("\n");
+    
+    centerPrintf("   [1]- An array is a structure that can store a series", FALSE);
+    centerPrintf("of data elements of the same type.", FALSE);
+    centerPrintf("     [2]- We can access the individual elements of an array", FALSE);
+    centerPrintf("through an index position, starting at A.", FALSE);
+    centerPrintf("  [3]- An array is a structure that can store a series", FALSE);
+    centerPrintf("of data elements of different types.", FALSE);
+    centerPrintf("[4]- We can access all the individual elements of", FALSE);
+    centerPrintf("an array through an index position, starting at 1", FALSE);
+    printf("\n\n");
+
+    paramater = true;
+    error = 0;
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 50: case 51: case 52:
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- An array is a structure that can store a series of data elements of the same type."ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[3] = 0;
+            break;
+        
+        case 49:
+            printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[3] = 1;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                accerts[3] = 0;
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
+            }
+            break;
+        }
+    }
+    getch();
+    system("cls");
+
+    resizeScreen();
+    levelTwo();
+
+    centerPrintf("B)What are the possible states that a logical", FALSE);
+    centerPrintf("type can assume?", FALSE);
+    printf("\n");
+    
+    centerPrintf("[1]- Doubtful, True       ", FALSE);
+    centerPrintf("[2]- False, Doubtful, True", FALSE);
+    centerPrintf("[3]- Right, Wrong         ", FALSE);
+    centerPrintf("[4]- True, False          ", FALSE);
+    printf("\n\n");
+
+    paramater = true;
+    error = 0;
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 49: case 50: case 51:
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- True, False."ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[4] = 0;
+            break;
+        
+        case 52:
+            printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[4] = 1;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                accerts[4] = 0;
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
+            }
+            break;
+        }
+    }
+    getch();
+    system("cls");
+    
+    resizeScreen();
+    levelTwo();
+
+    centerPrintf("B)Which of the following is a valid string", FALSE);
+    centerPrintf("concatenation operator?", FALSE);
+    printf("\n");
+    
+    centerPrintf("[1]- + ", FALSE);
+    centerPrintf("[2]- * ", FALSE);
+    centerPrintf("[3]- ->", FALSE);
+    centerPrintf("[4]- \" \"", FALSE);
+    printf("\n\n");
+
+    paramater = true;
+    error = 0;
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 50: case 51: case 52:
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- +"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[5] = 0;
+            break;
+        
+        case 49:
+            printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[5] = 1;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                accerts[5] = 0;
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
+            }
+            break;
+        }
+    }
+    getch();
+    system("cls");
 
 }
 
@@ -315,10 +640,13 @@ void newGame(){
     printf(ANSI_COLOR_GREEN_INTEN);
     centerPrintf("Lets go", FALSE);
 
-    Sleep(1000);
+    getch();
     system("cls");
 
     worldOne();
+    resizeScreen();
+
+    worldTwo();
 }
 
 void records(){
@@ -350,8 +678,8 @@ void getPanel(){
     case 3:
         printf("\n\n\n\n\n\n\n\n\n\n\n\n"ANSI_COLOR_RED);
         centerPrintf("Good bye, thanks!", FALSE);
-        system("start https://github.com/ymaninho54");
         Sleep(2000);
+        system("start https://github.com/ymaninho54");
         exit(0);
         break;
     }
