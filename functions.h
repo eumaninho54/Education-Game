@@ -5,7 +5,8 @@
 
 //Global var
 int order = 0;
-int accerts[9];
+int pontuation[100];
+FILE *arquivo;
 
 // Internal Functions //
 
@@ -395,13 +396,12 @@ void worldOne(){
         case 49: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- 807"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[0] = 0;
             break;
         
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[0] = 1;
+            pontuation[0] = 10;
             break;
 
         default:
@@ -409,7 +409,6 @@ void worldOne(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[0] = 0;
                 
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
@@ -448,13 +447,12 @@ void worldOne(){
         case 49: case 50: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [3]- the bride will be sad"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[2] = 0;
             break;
         
         case 51:
             printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[2] = 1;
+            pontuation[1] = 10;
             break;
 
         default:
@@ -462,7 +460,6 @@ void worldOne(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[2] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -498,13 +495,12 @@ void worldOne(){
         case 49: case 50: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [3]- 40 years old"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[1] = 0;
             break;
         
         case 51:
             printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[1] = 1;
+            pontuation[2] = 10;
             break;
 
         default:
@@ -512,7 +508,6 @@ void worldOne(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[1] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -551,13 +546,12 @@ void worldOne(){
         case 49: case 50: case 51:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- Andy was not alone"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[2] = 0;
             break;
         
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[2] = 1;
+            pontuation[3] = 10;
             break;
 
         default:
@@ -565,7 +559,6 @@ void worldOne(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[2] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -603,13 +596,12 @@ void worldOne(){
         case 49: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- mark went for a walk in the park"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[2] = 0;
             break;
         
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[2] = 1;
+            pontuation[4] = 10;
             break;
 
         default:
@@ -617,7 +609,6 @@ void worldOne(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[2] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -684,13 +675,12 @@ void worldTwo(){
         case 50: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- An array is a structure that can store a series of  data elements of the same type."ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[3] = 0;
             break;
         
         case 49:
             printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[3] = 1;
+            pontuation[5] = 25;
             break;
 
         default:
@@ -698,7 +688,6 @@ void worldTwo(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[3] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -732,13 +721,12 @@ void worldTwo(){
         case 49: case 50: case 51:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- All alternatives are correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[6] = 25;
             break;
 
         default:
@@ -746,7 +734,6 @@ void worldTwo(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -781,13 +768,12 @@ void worldTwo(){
         case 49: case 50: case 51:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- True, False."ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[7] = 25;
             break;
 
         default:
@@ -795,7 +781,6 @@ void worldTwo(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -830,13 +815,12 @@ void worldTwo(){
         case 49: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- the chained if command"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[8] = 25;
             break;
 
         default:
@@ -844,7 +828,6 @@ void worldTwo(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -879,13 +862,12 @@ void worldTwo(){
         case 50: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- +"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[5] = 0;
             break;
         
         case 49:
             printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[5] = 1;
+            pontuation[9] = 25;
             break;
 
         default:
@@ -893,7 +875,6 @@ void worldTwo(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[5] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -945,13 +926,12 @@ void worldThree(){
         case 49: case 50: case 51:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- \\n (Backslash)"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[10] = 35;
             break;
 
         default:
@@ -959,7 +939,6 @@ void worldThree(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -993,13 +972,12 @@ void worldThree(){
         case 49: case 50: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [3]- creating a array of type char"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 51:
             printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[11] = 35;
             break;
 
         default:
@@ -1007,7 +985,6 @@ void worldThree(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -1041,13 +1018,12 @@ void worldThree(){
         case 49: case 50: case 51:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [4]- var++"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[12] = 35;
             break;
 
         default:
@@ -1055,7 +1031,6 @@ void worldThree(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -1091,13 +1066,12 @@ void worldThree(){
         case 50: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- printf()"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 49:
             printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[13] = 35;
             break;
 
         default:
@@ -1105,7 +1079,6 @@ void worldThree(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -1140,13 +1113,12 @@ void worldThree(){
         case 49: case 51: case 52:
             printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- <>"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 0;
             break;
         
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            accerts[4] = 1;
+            pontuation[14] = 35;
             break;
 
         default:
@@ -1154,7 +1126,6 @@ void worldThree(){
             error += 1;
             if(error == 3){
                 paramater = false;
-                accerts[4] = 0;
                 printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
             }
             break;
@@ -1191,6 +1162,12 @@ void worldThree(){
     getPanel();
     getch();
 }
+void verifRecord(){
+
+    if (access("./record.txt", F_OK) == -1){
+        arquivo = fopen("record.txt", "a");
+    }
+}
 
 void newGame(){
     resizeScreen();
@@ -1214,6 +1191,13 @@ void newGame(){
 }
 
 void records(){
+    printf("\n\n\n\n\n\n\n");
+    printf(ANSI_COLOR_GREEN_INTEN);
+
+
+    centerPrintf("COMING SOON", FALSE);
+
+    //  COMING SOON :)
 
 }
 
@@ -1260,7 +1244,7 @@ void getPanel(){
         printf("\n\n\n\n\n\n\n\n\n\n\n\n"ANSI_COLOR_RED);
         centerPrintf("Good bye, thanks!", FALSE);
         Sleep(2000);
-        system("start https://github.com/ymaninho54");
+        system("start https://github.com/ymaninho54/Education-Game");
         exit(0);
         break;
     }

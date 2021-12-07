@@ -6,6 +6,8 @@
 int main(){
     system("mode con:cols=60 lines=30");
     
+    verifRecord();
+
     titleInit();
 
     resizeScreen();
