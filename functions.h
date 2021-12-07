@@ -737,7 +737,7 @@ void worldThree(){
     
     centerPrintf("[1]- knows – tells – would see – is", FALSE);
     centerPrintf("[2]- knew – tell – would see – are ", FALSE);
-    centerPrintf("[3]- knew – told – is seeing – were", FALSE);
+    centerPrintf("[3]- knew - told – is seeing – were", FALSE);
     centerPrintf("[4]- know – told – would see – am  ", FALSE);
     printf("\n\n");
 
@@ -804,7 +804,24 @@ void records(){
 }
 
 void credits(){
+    printf("\n\n\n\n\n\n\n\n");
+    printf(ANSI_COLOR_GREEN_INTEN);
+    centerPrintf("Thanks homie.", FALSE);
+    printf(ANSI_COLOR_GRAY);
+    centerPrintf("Here is the information of the devs", FALSE);
+    centerPrintf("who built the program.", FALSE);
 
+    printf("\n\n\n\n\n");
+    printf(ANSI_COLOR_CIANO_INTEN);
+    centerPrintf("Angelo Menti    -- Github = ymaninho54    ", FALSE);
+    centerPrintf("LinkedIn = Angelo Menti", FALSE);
+    printf("\n");
+    printf(ANSI_COLOR_RED_INTEN);
+    centerPrintf("Fernando Pimmel -- Github = FernandoPimmel", FALSE);
+    centerPrintf("LinkedIn = FernandoPimmel", FALSE);
+    printf("\n");
+    printf(ANSI_COLOR_BLUE_INTEN);
+    centerPrintf("Artur Martins   -- Github = ArturMartinssrs", FALSE);
 }
 
 // External Functions //
