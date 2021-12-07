@@ -572,7 +572,7 @@ void worldTwo(){
         switch (alternative)
         {
         case 50: case 51: case 52:
-            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- An array is a structure that can store a series of data elements of the same type."ANSI_COLOR_GRAY);
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [1]- An array is a structure that can store a series of  data elements of the same type."ANSI_COLOR_GRAY);
             paramater = false;
             accerts[3] = 0;
             break;
@@ -649,7 +649,7 @@ void worldTwo(){
     resizeScreen();
     levelTwo();
 
-    centerPrintf("B)Which of the following is a valid string", FALSE);
+    centerPrintf("C)Which of the following is a valid string", FALSE);
     centerPrintf("concatenation operator?", FALSE);
     printf("\n");
     
@@ -717,10 +717,63 @@ void worldThree(){
     levelThree();
 
     centerPrintf("In this world you will test your knowledge of C lenguage", FALSE);
-    //printf(ANSI_COLOR_BLUE_INTEN);
+    printf(ANSI_COLOR_MAGENTA_INTEN);
     centerPrintf("Good luck", FALSE);
     printf(ANSI_COLOR_GRAY);
 
+    getch();
+    system("cls");
+
+    resizeScreen();
+    levelThree();
+
+    centerPrintf("A)Complete with the correct verb tense:  ", FALSE);
+    centerPrintf("I) If I _____ it, I would visit you      ", FALSE);
+    centerPrintf("II) If she is sad, ______ her a story    ", FALSE);
+    centerPrintf("III) If you lit the room, we _____ better", FALSE);
+    centerPrintf("IV) If you ____ angry, don’t shout at me ", FALSE);
+
+    printf("\n");
+    
+    centerPrintf("[1]- knows – tells – would see – is", FALSE);
+    centerPrintf("[2]- knew – tell – would see – are ", FALSE);
+    centerPrintf("[3]- knew – told – is seeing – were", FALSE);
+    centerPrintf("[4]- know – told – would see – am  ", FALSE);
+    printf("\n\n");
+
+    paramater = true;
+    error = 0;
+
+    while(paramater){
+        gotoxy(0,22);
+        printf("Your alternative: ");
+        alternative = getch();
+
+        switch (alternative)
+        {
+        case 50: case 51: case 52:
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- knew – tell – would see – are"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[6] = 0;
+            break;
+        
+        case 49:
+            printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
+            paramater = false;
+            accerts[6] = 1;
+            break;
+
+        default:
+            printf("Error, enter alternative 1 to 5\n");
+            error += 1;
+            if(error == 3){
+                paramater = false;
+                accerts[6] = 0;
+                printf(ANSI_COLOR_RED_INTEN"Question skipped because of excessive errors"ANSI_COLOR_GRAY);
+            }
+            break;
+        }
+    }
     getch();
     system("cls");
 }
