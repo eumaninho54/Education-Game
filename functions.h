@@ -5,8 +5,7 @@
 
 //Global var
 int order = 0;
-int pontuation[100];
-FILE *arquivo;
+
 
 // Internal Functions //
 
@@ -79,8 +78,7 @@ void menuKeys(int key){
     case 80: case 115:
         if(order == 0){
             leftPrintf(" NEW GAME");
-            leftPrintf(">> RECORD");
-            leftPrintf(" CREDITS");
+            leftPrintf(">> CREDITS");
             leftPrintf(" EXIT"); 
 
             order = 1;
@@ -89,27 +87,16 @@ void menuKeys(int key){
 
         if(order == 1){
             leftPrintf(" NEW GAME");
-            leftPrintf(" RECORD");
-            leftPrintf(">> CREDITS");
-            leftPrintf(" EXIT"); 
+            leftPrintf(" CREDITS");
+            leftPrintf(">> EXIT"); 
 
             order = 2;
             break;
         }
 
+
         if(order == 2){
             leftPrintf(" NEW GAME");
-            leftPrintf(" RECORD");
-            leftPrintf(" CREDITS");
-            leftPrintf(">> EXIT"); 
-
-            order = 3;
-            break;
-        }
-
-        if(order == 3){
-            leftPrintf(" NEW GAME");
-            leftPrintf(" RECORD");
             leftPrintf(" CREDITS");
             leftPrintf(">> EXIT"); 
             break;
@@ -119,7 +106,6 @@ void menuKeys(int key){
     case 72: case 119:
         if(order == 0){
             leftPrintf(">> NEW GAME");
-            leftPrintf(" RECORD");
             leftPrintf(" CREDITS");
             leftPrintf(" EXIT"); 
             break;
@@ -127,7 +113,6 @@ void menuKeys(int key){
 
         if(order == 1){
             leftPrintf(">> NEW GAME");
-            leftPrintf(" RECORD");
             leftPrintf(" CREDITS");
             leftPrintf(" EXIT"); 
 
@@ -137,28 +122,16 @@ void menuKeys(int key){
 
         if(order == 2){
             leftPrintf(" NEW GAME");
-            leftPrintf(">> RECORD");
-            leftPrintf(" CREDITS");
-            leftPrintf(" EXIT"); 
-
-            order = 1;
-            break;
-        }
-
-        if(order == 3){
-            leftPrintf(" NEW GAME");
-            leftPrintf(" RECORD");
             leftPrintf(">> CREDITS");
             leftPrintf(" EXIT"); 
 
-            order = 2;
+            order = 1;
             break;
         }
         break;
         
     case 0:
         leftPrintf(">> NEW GAME");
-        leftPrintf(" RECORD");
         leftPrintf(" CREDITS");
         leftPrintf(" EXIT"); 
         break;
@@ -166,7 +139,6 @@ void menuKeys(int key){
     default:
         if(order == 0){
             leftPrintf(">> NEW GAME");
-            leftPrintf(" RECORD");
             leftPrintf(" CREDITS");
             leftPrintf(" EXIT"); 
             break;
@@ -174,23 +146,13 @@ void menuKeys(int key){
 
         if(order == 1){
             leftPrintf(" NEW GAME");
-            leftPrintf(">> RECORD");
-            leftPrintf(" CREDITS");
+            leftPrintf(">> CREDITS");
             leftPrintf(" EXIT"); 
             break;
         }
 
         if(order == 2){
             leftPrintf(" NEW GAME");
-            leftPrintf(" RECORD");
-            leftPrintf(">> CREDITS");
-            leftPrintf(" EXIT"); 
-            break;
-        }
-
-        if(order == 3){
-            leftPrintf(" NEW GAME");
-            leftPrintf(" RECORD");
             leftPrintf(" CREDITS");
             leftPrintf(">> EXIT"); 
             break;
@@ -401,7 +363,6 @@ void worldOne(){
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[0] = 10;
             break;
 
         default:
@@ -452,7 +413,6 @@ void worldOne(){
         case 51:
             printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[1] = 10;
             break;
 
         default:
@@ -500,7 +460,6 @@ void worldOne(){
         case 51:
             printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[2] = 10;
             break;
 
         default:
@@ -551,7 +510,7 @@ void worldOne(){
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[3] = 10;
+    
             break;
 
         default:
@@ -601,7 +560,6 @@ void worldOne(){
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[4] = 10;
             break;
 
         default:
@@ -680,7 +638,6 @@ void worldTwo(){
         case 49:
             printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[5] = 25;
             break;
 
         default:
@@ -726,7 +683,6 @@ void worldTwo(){
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[6] = 25;
             break;
 
         default:
@@ -773,7 +729,6 @@ void worldTwo(){
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[7] = 25;
             break;
 
         default:
@@ -820,7 +775,6 @@ void worldTwo(){
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[8] = 25;
             break;
 
         default:
@@ -867,7 +821,6 @@ void worldTwo(){
         case 49:
             printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[9] = 25;
             break;
 
         default:
@@ -931,7 +884,6 @@ void worldThree(){
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[10] = 35;
             break;
 
         default:
@@ -977,7 +929,6 @@ void worldThree(){
         case 51:
             printf(ANSI_COLOR_GREEN_INTEN"[3] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[11] = 35;
             break;
 
         default:
@@ -1023,7 +974,6 @@ void worldThree(){
         case 52:
             printf(ANSI_COLOR_GREEN_INTEN"[4] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[12] = 35;
             break;
 
         default:
@@ -1071,7 +1021,6 @@ void worldThree(){
         case 49:
             printf(ANSI_COLOR_GREEN_INTEN"[1] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[13] = 35;
             break;
 
         default:
@@ -1094,8 +1043,8 @@ void worldThree(){
     centerPrintf(" operator in c?", FALSE);
     printf("\n");
     
-    centerPrintf("[1]- !=   ", FALSE);
-    centerPrintf("[2]- <>   ", FALSE);
+    centerPrintf("[1]- !<   ", FALSE);
+    centerPrintf("[2]- !=   ", FALSE);
     centerPrintf("[3]- ~    ", FALSE);
     centerPrintf("[4]- ||   ", FALSE);
     printf("\n\n");
@@ -1111,14 +1060,13 @@ void worldThree(){
         switch (alternative)
         {
         case 49: case 51: case 52:
-            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- <>"ANSI_COLOR_GRAY);
+            printf(ANSI_COLOR_RED_INTEN"Sorry, incorrect alternative, the asnwer  is [2]- !="ANSI_COLOR_GRAY);
             paramater = false;
             break;
         
         case 50:
             printf(ANSI_COLOR_GREEN_INTEN"[2] Great, alternative correct"ANSI_COLOR_GRAY);
             paramater = false;
-            pontuation[14] = 35;
             break;
 
         default:
@@ -1162,12 +1110,7 @@ void worldThree(){
     getPanel();
     getch();
 }
-void verifRecord(){
 
-    if (access("./record.txt", F_OK) == -1){
-        arquivo = fopen("record.txt", "a");
-    }
-}
 
 void newGame(){
     resizeScreen();
@@ -1190,21 +1133,11 @@ void newGame(){
     worldThree();
 }
 
-void records(){
-    printf("\n\n\n\n\n\n\n");
-    printf(ANSI_COLOR_GREEN_INTEN);
-
-
-    centerPrintf("COMING SOON", FALSE);
-
-    //  COMING SOON :)
-
-}
 
 void credits(){
     printf("\n\n\n\n\n\n\n\n");
     printf(ANSI_COLOR_GREEN_INTEN);
-    centerPrintf("Thanks homie.", FALSE);
+    centerPrintf("Thanks homie", FALSE);
     printf(ANSI_COLOR_GRAY);
     centerPrintf("Here is the information of the devs", FALSE);
     centerPrintf("who built the program.", FALSE);
@@ -1219,7 +1152,17 @@ void credits(){
     centerPrintf("LinkedIn = FernandoPimmel", FALSE);
     printf("\n");
     printf(ANSI_COLOR_BLUE_INTEN);
-    centerPrintf("Artur Martins   -- Github = ArturMartinssrs", FALSE);
+    centerPrintf("Artur Martins     -- Github = ArturMartinssrs", FALSE);
+
+    getch();
+
+    system("cls");
+    menuGame(1);
+
+    menuSelector();
+
+    getPanel();
+    getch();
 }
 
 // External Functions //
@@ -1233,22 +1176,18 @@ void getPanel(){
         break;
     
     case 1:
-        records();
-        break;
-
-    case 2:
         credits();
         break;
 
-    case 3:
+    case 2:
         printf("\n\n\n\n\n\n\n\n\n\n\n\n"ANSI_COLOR_RED);
         centerPrintf("Good bye, thanks!", FALSE);
         Sleep(2000);
         system("start https://github.com/ymaninho54/Education-Game");
         exit(0);
         break;
-    }
 
+}
 }
 
 //Resize the terminal screen
