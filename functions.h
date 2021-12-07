@@ -1075,6 +1075,7 @@ void worldThree(){
     centerPrintf("[2]- print()         ", FALSE);
     centerPrintf("[3]- console.write() ", FALSE);
     centerPrintf("[4]- document.write()", FALSE);
+
     printf("\n\n");
 
     paramater = true;
@@ -1217,7 +1218,24 @@ void records(){
 }
 
 void credits(){
+    printf("\n\n\n\n\n\n\n\n");
+    printf(ANSI_COLOR_GREEN_INTEN);
+    centerPrintf("Thanks homie.", FALSE);
+    printf(ANSI_COLOR_GRAY);
+    centerPrintf("Here is the information of the devs", FALSE);
+    centerPrintf("who built the program.", FALSE);
 
+    printf("\n\n\n\n\n");
+    printf(ANSI_COLOR_CIANO_INTEN);
+    centerPrintf("Angelo Menti    -- Github = ymaninho54    ", FALSE);
+    centerPrintf("LinkedIn = Angelo Menti", FALSE);
+    printf("\n");
+    printf(ANSI_COLOR_RED_INTEN);
+    centerPrintf("Fernando Pimmel -- Github = FernandoPimmel", FALSE);
+    centerPrintf("LinkedIn = FernandoPimmel", FALSE);
+    printf("\n");
+    printf(ANSI_COLOR_BLUE_INTEN);
+    centerPrintf("Artur Martins   -- Github = ArturMartinssrs", FALSE);
 }
 
 // External Functions //

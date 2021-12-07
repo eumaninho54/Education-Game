@@ -11,6 +11,7 @@
 #define ANSI_COLOR_BLUE_INTEN   "\e[1;34m"
 #define ANSI_COLOR_RED_INTEN    "\e[1;31m"
 #define ANSI_COLOR_MAGENTA_INTEN"\e[1;35m"
+#define ANSI_COLOR_CIANO_INTEN  "\e[1;36m"
 
 
 //Color definition - Background
